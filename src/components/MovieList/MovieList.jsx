@@ -15,7 +15,7 @@ const MovieList = () => {
                     <img
                         src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
                         alt={title}
-                        width='160'/> 
+                        width='80'/> 
                     <h3>{title}</h3>
                 </li>
         ))}

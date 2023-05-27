@@ -1,24 +1,35 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import styled from '@emotion/styled';
+import { PageHeader, NavList, NavItem, Container } from './Layout.styled';
 
-// localhost:3000/
-//localhost:3000/dogs
-//localhost:3000/dogs/dog-5
+const StyledLink = styled(NavLink)`
+    color: #ffffff; 
+    padding: 8px 24px;
+    border: 1px transparent;
+    border-radius: 8px;
+
+    &.active {
+        border: 1px solid #ffffff;
+    }
+`
 
 export const Layout = () => {
   return (
     <>
-      <header>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/movies">Movies</NavLink>
-          </li>
-        </ul>
-      </header>
+      <PageHeader>
+        <NavList>
+          <NavItem>
+            <StyledLink to="/">Home</StyledLink>
+          </NavItem>
+          <NavItem>
+            <StyledLink to="/movies">Movies</StyledLink>
+          </NavItem>
+        </NavList>
+      </PageHeader>
       <main>
-        <Outlet />
+        <Container>
+            <Outlet />
+        </Container>
       </main>
     </>
   );
