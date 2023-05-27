@@ -1,17 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom';
-import styled from '@emotion/styled';
-import { PageHeader, NavList, NavItem, Container } from './Layout.styled';
-
-const StyledLink = styled(NavLink)`
-    color: #ffffff; 
-    padding: 8px 24px;
-    border: 1px transparent;
-    border-radius: 8px;
-
-    &.active {
-        border: 1px solid #ffffff;
-    }
-`
+import { Outlet } from 'react-router-dom';
+import { PageHeader, NavList, NavItem, StyledLink, Container } from './Layout.styled';
 
 export const Layout = () => {
   return (
