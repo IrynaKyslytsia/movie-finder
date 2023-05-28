@@ -22,7 +22,7 @@ const Movies = () => {
     getMovies(searchQuery)
       .then(data => {
         if (data.results.length === 0) {
-           Notiflix.Notify.failure('There are no images...');
+           Notiflix.Notify.failure('There are no movies...');
         }
         
         setMovies(data.results)

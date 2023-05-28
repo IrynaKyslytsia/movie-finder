@@ -1,15 +1,33 @@
+import MovieInfo from 'components/MovieInfo/MovieInfo';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
+import { getMovieInfo } from 'services/api';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
+  const [movieInfo, setMovieInfo] = useState(null);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  // HTTP запрос, если нужно
-  // }, [])
+  useEffect(() => {
+    setIsLoading(true);
+
+    getMovieInfo(movieId)
+      .then(data => {
+        console.log(data)
+        setMovieInfo(data)
+        console.log(movieInfo)
+      })
+      .catch(error => setError(error))
+      .finally(() => { setIsLoading(false) })
+  }, [movieId, movieInfo])
 
   return (
     <>
-      <h1>Movie Details: {movieId}</h1>
+      {isLoading && <div>Loading...</div>}
+      {error && <div>{error.message}</div>}
+      {movieInfo && <MovieInfo id={movieInfo} />}
       <ul>
         <li>
           <Link to="cast">Актерский состав</Link>

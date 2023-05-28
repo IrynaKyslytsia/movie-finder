@@ -29,6 +29,17 @@ export const getMovies = (searchQuery) => {
 
 //запит повної інформації про фільм
 
+export const getMovieInfo = (id) => {
+    return fetch(`${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`)
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+
+            return Promise.reject(new Error('Oops... Something went wrong'))
+        })
+};
+
 //запит інформації про акторський склад
 
 //запит оглядів
