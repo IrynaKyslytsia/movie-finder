@@ -16,6 +16,17 @@ export const getTrendingMovies = () => {
 
 //пошук фільму за ключовим словом
 
+export const getMovies = (searchQuery) => {
+    return fetch(`${BASE_URL}search/movie?query=${searchQuery}&api_key=${API_KEY}&include_adult=false&language=en-US&page=1`)
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+
+            return Promise.reject(new Error('Oops... Something went wrong'))
+        })
+};
+
 //запит повної інформації про фільм
 
 //запит інформації про акторський склад

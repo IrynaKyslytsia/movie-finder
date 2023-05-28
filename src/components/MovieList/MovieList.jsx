@@ -1,27 +1,12 @@
-import { useState, useEffect } from "react";
-import { getTrendingMovies } from "services/api";
+// import { useState, useEffect } from "react";
+// import { getTrendingMovies } from "services/api";
 import { List, ListItem, MovieLink, Title } from "./MovieList.styled";
 
-const MovieList = () => {
-    const [trendingMovies, setTrendingMovies] = useState([]);
-    const [error, setError] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
+const MovieList = ({movies}) => {
 
-    useEffect(() => {
-        setIsLoading(true);
-
-      getTrendingMovies()
-        .then(data => { setTrendingMovies(data.results) })
-        .catch(error => setError(error))
-        .finally(() => {setIsLoading(false)})
-  }, [])
-
-    return (
-        <>
-            {isLoading && <div>Is loading...</div>}
-            {error && <div>{error.message}</div>}
+    return (        
       <List>
-            {trendingMovies && trendingMovies.map(({ id, title, poster_path }) => (
+            {movies && movies.map(({ id, title, poster_path }) => (
                 <ListItem key={id}>
                     <MovieLink key={id} to={`/movies/${id}`}>
                         <img
@@ -33,7 +18,6 @@ const MovieList = () => {
                 </ListItem>
         ))}
       </List>
-        </>
   );
 };
 

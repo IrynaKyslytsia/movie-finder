@@ -1,20 +1,48 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import MovieList from "components/MovieList/MovieList";
+import { getMovies } from "services/api";
+import SearchForm from 'components/SearchForm/SearchForm';
 
 const Movies = () => {
-  // useEffect(() => {
-  // HTTP запрос, если нужно
-  // }, [])
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [movies, setMovies] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (searchQuery === '') {
+      return;
+    };
+
+    setIsLoading(true);
+
+    getMovies(searchQuery)
+      .then(data => {
+        if (data.results.length === 0) {
+          alert('There are no images...')
+        }
+        
+        setMovies(data.results)
+      })
+      .catch(error => setError(error))
+      .finally(() => { setIsLoading(false) })
+  }, [searchQuery]);
+
+  const handleFormSubmit = (searchQuery) => {
+    setSearchQuery(searchQuery);
+    setMovies([]);
+  };
 
   return (
-    <div>
-      {['movie-1', 'movie-2', 'movie-3', 'movie-4', 'movie-5'].map(movie => {
-        return (
-          <Link key={movie} to={`${movie}`}>
-            {movie}
-          </Link>
-        );
-      })}
-    </div>
+    <>
+      <SearchForm
+        onSubmit={handleFormSubmit} />
+      {isLoading && <div>Is loading...</div>}
+      {error && <div>{error.message}</div>}
+      {movies && <MovieList movies={movies} />}
+    </>
   );
 };
 
