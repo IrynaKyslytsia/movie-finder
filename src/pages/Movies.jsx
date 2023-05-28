@@ -1,5 +1,6 @@
 // import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import Notiflix from 'notiflix';
 import MovieList from "components/MovieList/MovieList";
 import { getMovies } from "services/api";
 import SearchForm from 'components/SearchForm/SearchForm';
@@ -21,7 +22,7 @@ const Movies = () => {
     getMovies(searchQuery)
       .then(data => {
         if (data.results.length === 0) {
-          alert('There are no images...')
+           Notiflix.Notify.failure('There are no images...');
         }
         
         setMovies(data.results)

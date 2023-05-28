@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Notiflix from 'notiflix';
+import { ImSearch } from "react-icons/im";
 
 const SearchForm = ({ onSubmit }) => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -12,7 +14,7 @@ const SearchForm = ({ onSubmit }) => {
         e.preventDefault();
 
         if (searchQuery.trim() === '') {
-            // Notiflix.Notify.info('Please enter something!');
+            Notiflix.Notify.info('Please enter something!');
             return;
         }
         onSubmit(searchQuery);
@@ -22,8 +24,7 @@ const SearchForm = ({ onSubmit }) => {
         return (            
                 <form onSubmit={handleSubmit} >
                     <button type="submit">
-                    {/* <ImSearch/> */}
-                    <span>Search</span>
+                    <ImSearch/>
                     </button>
     
                     <input
