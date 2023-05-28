@@ -19,7 +19,7 @@ const Home = () => {
   
   return (
     <>
-      {isLoading && <div>Is loading...</div>}
+      {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {trendingMovies && <MovieList movies={trendingMovies} />}
     </>

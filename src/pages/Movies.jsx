@@ -40,7 +40,7 @@ const Movies = () => {
     <>
       <SearchForm
         onSubmit={handleFormSubmit} />
-      {isLoading && <div>Is loading...</div>}
+      {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {movies && <MovieList movies={movies} />}
     </>

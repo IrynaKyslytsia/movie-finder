@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Notiflix from 'notiflix';
 import { ImSearch } from "react-icons/im";
+import { Form, Button, Input } from "./SearchForm.styled";
 
 const SearchForm = ({ onSubmit }) => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -22,12 +23,12 @@ const SearchForm = ({ onSubmit }) => {
     };
 
         return (            
-                <form onSubmit={handleSubmit} >
-                    <button type="submit">
-                    <ImSearch/>
-                    </button>
+                <Form onSubmit={handleSubmit} >
+                    <Button type="submit">
+                    <ImSearch width='18' height='18'/>
+                    </Button>
     
-                    <input
+                    <Input
                         type="text"
                         value={searchQuery}
                         onChange={handleChange}
@@ -35,7 +36,7 @@ const SearchForm = ({ onSubmit }) => {
                         autoFocus
                         placeholder="Search movies"
                     />
-                </form>
+                </Form>
             )
 };
 
