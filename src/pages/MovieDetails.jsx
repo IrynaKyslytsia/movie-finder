@@ -17,17 +17,16 @@ const MovieDetails = () => {
       .then(data => {
         console.log(data)
         setMovieInfo(data)
-        console.log(movieInfo)
       })
       .catch(error => setError(error))
       .finally(() => { setIsLoading(false) })
-  }, [movieId, movieInfo])
+  }, [movieId])
 
   return (
     <>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
-      {movieInfo && <MovieInfo id={movieInfo} />}
+      {movieInfo && <MovieInfo movie={movieInfo} />}
       <ul>
         <li>
           <Link to="cast">Актерский состав</Link>
