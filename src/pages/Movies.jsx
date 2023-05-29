@@ -38,7 +38,7 @@ const Movies = () => {
   const handleFormSubmit = (searchQuery) => {
     setSearchParams({query: searchQuery})
     setSearchQuery(searchQuery);
-    setMovies([]);
+    // setMovies([]);
   };
 
   return (
