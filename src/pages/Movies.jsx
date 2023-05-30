@@ -8,7 +8,7 @@ import { useSearchParams } from "react-router-dom";
 
 const Movies = () => {
 
-  const [searchQuery, setSearchQuery] = useState('');
+  // const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +37,7 @@ const Movies = () => {
 
   const handleFormSubmit = (searchQuery) => {
     setSearchParams({query: searchQuery})
-    setSearchQuery(searchQuery);
+    // setSearchQuery(searchQuery);
     // setMovies([]);
   };
 
