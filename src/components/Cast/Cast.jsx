@@ -25,7 +25,7 @@ const Cast = () => {
 
   return (
     <>
-       {isLoading && <div>Loading...</div>}
+      {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       <CastList>
         {movieCast && movieCast.map(({ name, id, profile_path, character }) => (

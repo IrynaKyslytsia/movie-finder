@@ -1,12 +1,8 @@
-// import { useState, useEffect } from "react";
-// import { getTrendingMovies } from "services/api";
 import { useLocation } from "react-router-dom";
 import { List, ListItem, MovieLink, Title } from "./MovieList.styled";
 
-const MovieList = ({ movies }) => {
-    
+const MovieList = ({ movies }) => {    
     const location = useLocation();
-    // console.log(location.state)
 
     return (        
       <List>
