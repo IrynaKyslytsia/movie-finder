@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getMovieReviews } from 'services/api';
+import { AuthorName, Content, ListItem, ReviewList } from './Reviews.styled';
 const { useParams } = require('react-router-dom');
 
 const Reviews = () => {
@@ -25,14 +26,14 @@ const Reviews = () => {
     <>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
-      <ul>
+      <ReviewList>
         {movieReviews && movieReviews.map(({ id, author, content }) => (
-          <li key={id}>
-            <p>Author: {author}</p>
-            <p>{content}</p>
-          </li>
+          <ListItem key={id}>
+            <AuthorName>Author: {author}</AuthorName>
+            <Content>{content}</Content>
+          </ListItem>
         ))}
-      </ul>
+      </ReviewList>
     </>
   );
 };
