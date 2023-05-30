@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getMovieCast } from 'services/api';
+import { ActorName, ActorPhoto, CastList, Text } from './Cast.styled';
 
 const { useParams } = require('react-router-dom');
 
@@ -26,18 +27,18 @@ const Cast = () => {
     <>
        {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
-      <ul>
+      <CastList>
         {movieCast && movieCast.map(({ name, id, profile_path, character }) => (
           <li key={id}>
-            <img
+            <ActorPhoto
               src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
               alt={name}
               width='160' />
-            <p>{name}</p>
-            <p>Character: {character}</p>
+            <ActorName>{name}</ActorName>
+            <Text>Character: {character}</Text>
           </li>
       ))}
-      </ul>
+      </CastList>
     </>
   );
 };
