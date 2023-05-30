@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const MovieCard = styled.div`
     display: flex;
     gap: 32px;
-    margin-top: 24px;
+    margin-top: 40px;
     margin-bottom: 40px;
 `;
 
@@ -28,4 +29,27 @@ export const Text = styled.p`
 export const Subtitle = styled.h3`
     font-size: 24px;
     margin-bottom: 16px;
-`
+`;
+
+//MovieDetails styles
+
+export const BackLink = styled(Link)`
+    background-color: #002077;
+    color: #ffffff;
+    padding: 8px 24px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+`;
+
+export const AdditionalInfo = styled.ul`
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+`;
+
+export const InfoLink = styled(Link)`
+    background-color: #002077;
+    color: #ffffff;
+    padding: 8px 24px;
+    border-radius: 8px;
+`;

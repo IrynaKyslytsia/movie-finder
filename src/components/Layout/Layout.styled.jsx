@@ -8,7 +8,7 @@ export const PageHeader = styled.header`
 
 export const NavList = styled.ul`
     display: flex;
-    gap: 24px;
+    gap: 40px;
 `;
 
 export const NavItem = styled.li`       

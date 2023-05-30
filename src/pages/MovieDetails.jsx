@@ -1,7 +1,8 @@
 import MovieInfo from 'components/MovieInfo/MovieInfo';
+import { AdditionalInfo, BackLink, InfoLink } from 'components/MovieInfo/MovieInfo.styled';
 import { Suspense, useRef, useState, useEffect } from 'react';
 
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieInfo } from 'services/api';
 
 const MovieDetails = () => {
@@ -29,19 +30,18 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Link to={backLinkLocationRef.current}>Go back</Link>
+      <BackLink to={backLinkLocationRef.current}>Go back</BackLink>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {movieInfo && <MovieInfo movie={movieInfo} />}
-      <h2>Additional information</h2>
-      <ul>
+      <AdditionalInfo>
         <li>
-          <Link to="cast">Cast</Link>
+          <InfoLink to="cast">Cast</InfoLink>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <InfoLink to="reviews">Reviews</InfoLink>
         </li>
-      </ul>
+      </AdditionalInfo>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
