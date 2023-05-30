@@ -42,4 +42,15 @@ export const getMovieInfo = (id) => {
 
 //запит інформації про акторський склад
 
+export const getMovieCast = (id) => {
+    return fetch(`${BASE_URL}movie/${id}/credits?api_key=${API_KEY}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+
+            return Promise.reject(new Error('Oops... Something went wrong'))
+        })
+};
+
 //запит оглядів
