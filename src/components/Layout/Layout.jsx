@@ -1,7 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import { PageHeader, NavList, NavItem, StyledLink, Container } from './Layout.styled';
+import { Suspense } from 'react';
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <>
       <PageHeader>
@@ -16,9 +17,13 @@ export const Layout = () => {
       </PageHeader>
       <main>
         <Container>
-            <Outlet />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Outlet />
+            </Suspense>
         </Container>
       </main>
     </>
   );
 };
+
+export default Layout;

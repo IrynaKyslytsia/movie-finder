@@ -1,6 +1,6 @@
 import MovieInfo from 'components/MovieInfo/MovieInfo';
-import { useRef, useState } from 'react';
-import { useEffect } from 'react';
+import { Suspense, useRef, useState, useEffect } from 'react';
+
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieInfo } from 'services/api';
 
@@ -42,7 +42,9 @@ const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
