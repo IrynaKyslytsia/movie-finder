@@ -54,3 +54,14 @@ export const getMovieCast = (id) => {
 };
 
 //запит оглядів
+
+export const getMovieReviews = (id) => {
+    return fetch(`${BASE_URL}movie/${id}/reviews?api_key=${API_KEY}`)
+    .then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+
+            return Promise.reject(new Error('Oops... Something went wrong'))
+        })
+};
