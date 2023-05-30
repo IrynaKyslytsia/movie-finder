@@ -17,7 +17,7 @@ const Movies = () => {
   const query = searchParams.get('query') ?? '';
 
   useEffect(() => {
-    if (searchQuery === '') {
+    if (query === '') {
       return;
     };
 
@@ -33,7 +33,7 @@ const Movies = () => {
       })
       .catch(error => setError(error))
       .finally(() => { setIsLoading(false) })
-  }, [query, searchQuery]);
+  }, [query]);
 
   const handleFormSubmit = (searchQuery) => {
     setSearchParams({query: searchQuery})
