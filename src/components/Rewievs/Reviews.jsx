@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getMovieReviews } from 'services/api';
-import { AuthorName, Content, ListItem, ReviewList } from './Reviews.styled';
+import { AuthorName, Content, ListItem, ReviewList, Message } from './Reviews.styled';
+
 const { useParams } = require('react-router-dom');
 
 const Reviews = () => {
@@ -26,14 +27,14 @@ const Reviews = () => {
     <>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
-      <ReviewList>
-        {movieReviews && movieReviews.map(({ id, author, content }) => (
+      {movieReviews.length > 0 ? <ReviewList>
+        {movieReviews.map(({ id, author, content }) => (
           <ListItem key={id}>
             <AuthorName>Author: {author}</AuthorName>
             <Content>{content}</Content>
           </ListItem>
         ))}
-      </ReviewList>
+      </ReviewList> : (<Message>Sorry, there is no information here...</Message>)}
     </>
   );
 };

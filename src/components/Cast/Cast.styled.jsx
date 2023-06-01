@@ -28,3 +28,8 @@ export const ActorName = styled.p`
 export const Text = styled.p`
     margin-top: 8px;
 `;
+
+export const Message = styled.div`
+    font-size: 24px;
+    font-weight: 500;
+`;

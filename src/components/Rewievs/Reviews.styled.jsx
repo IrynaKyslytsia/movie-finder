@@ -21,3 +21,8 @@ export const Content = styled.p`
     font-size: 16px;
     line-height: 1.5;
 `;
+
+export const Message = styled.div`
+    font-size: 24px;
+    font-weight: 500;
+`;
