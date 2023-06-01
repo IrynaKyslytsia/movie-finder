@@ -18,6 +18,15 @@ export const MovieLink = styled(Link)`
     color: #000000;
 `;
 
+export const Poster = styled.img`
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: 120px;
+    object-fit: cover;
+`;
+
 export const Title = styled.h3`
     font-size: 32px;
 `;

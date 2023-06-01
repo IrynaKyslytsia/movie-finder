@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getMovieCast } from 'services/api';
 import { ActorName, ActorPhoto, CastList, Text, Message } from './Cast.styled';
+import DefaultImage from '../../images/profileImg.jpg';
 
 const { useParams } = require('react-router-dom');
 
@@ -31,7 +32,7 @@ const Cast = () => {
         {movieCast.map(({ name, id, profile_path, character }) => (
           <li key={id}>
             <ActorPhoto
-              src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+              src={profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : DefaultImage}
               alt={name}
               width='160' />
             <ActorName>{name}</ActorName>

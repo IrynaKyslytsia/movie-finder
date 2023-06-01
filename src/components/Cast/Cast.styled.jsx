@@ -16,7 +16,12 @@ export const CastList = styled.ul`
 `;
 
 export const ActorPhoto = styled.img`
-    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: 240px;
+    object-fit: cover;
 `;
 
 export const ActorName = styled.p`
