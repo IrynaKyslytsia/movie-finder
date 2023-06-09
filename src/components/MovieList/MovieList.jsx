@@ -12,8 +12,7 @@ const MovieList = ({ movies }) => {
                     <MovieLink to={`/movies/${id}`} state={{ from: location }}>
                         <Poster
                         src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : DefaultImage}
-                        alt={title}
-                        width='80'/> 
+                        alt={title} /> 
                         <Title>{title}</Title>
                     </MovieLink>
                 </ListItem>

@@ -2,20 +2,30 @@ import styled from '@emotion/styled';
 import { Link } from "react-router-dom";
 
 export const List = styled.ul`
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    --min: 30ch;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+    gap: 1rem;
 `;
 
 export const ListItem = styled.li`
-    display: flex;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        transform: scale(1.03);
+        cursor: zoom-in;
+    }
 `;
 
 export const MovieLink = styled(Link)`
-    display: flex;
     gap: 24px;
     align-items: center;
     color: #000000;
+    
 `;
 
 export const Poster = styled.img`
@@ -23,10 +33,10 @@ export const Poster = styled.img`
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    height: 120px;
-    object-fit: cover;
+    margin-bottom: 8px;    
 `;
 
 export const Title = styled.h3`
-    font-size: 32px;
+    font-size: 16px;
+    margin-bottom: 8px;
 `;

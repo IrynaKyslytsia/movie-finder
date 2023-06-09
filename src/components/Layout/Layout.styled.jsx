@@ -27,8 +27,8 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const Container = styled.div`
-    width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 40px 15px;
-`
+    padding: 5vw;
+    max-width: 180ch;
+`;
