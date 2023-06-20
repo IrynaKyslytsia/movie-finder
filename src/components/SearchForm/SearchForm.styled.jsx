@@ -9,6 +9,8 @@ export const Form = styled.form`
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 export const Button = styled.button`

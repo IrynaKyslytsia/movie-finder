@@ -2,14 +2,17 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const MovieCard = styled.div`
-    display: flex;
-    gap: 32px;
+--min: 30ch;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+gap: 1rem;
     margin-top: 40px;
     margin-bottom: 40px;
 `;
 
 export const Poster = styled.img`
-    width: 320px;
+    display: block;
+    max-width: 100%;
 `;
 
 export const Info = styled.div`

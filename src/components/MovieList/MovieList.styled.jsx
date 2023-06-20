@@ -9,7 +9,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-    border-radius: 2px;
+    border-radius: 4px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 
@@ -33,10 +33,11 @@ export const Poster = styled.img`
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    margin-bottom: 8px;    
+    object-fit: cover;   
 `;
 
 export const Title = styled.h3`
+    display: block;
+    padding: 12px;
     font-size: 16px;
-    margin-bottom: 8px;
 `;

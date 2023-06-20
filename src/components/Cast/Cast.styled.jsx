@@ -19,18 +19,19 @@ export const ActorPhoto = styled.img`
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    height: 240px;
     object-fit: cover;
 `;
 
 export const ActorName = styled.p`
     margin-top: 8px;
+    margin-left: 24px;
     font-size: 16px;
     font-weight: 500;
 `;
 
 export const Text = styled.p`
     margin-top: 8px;
+    margin-left: 24px;
 `;
 
 export const Message = styled.div`
