@@ -9,7 +9,8 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-    border-radius: 4px;
+    border-radius: 8px;
+    overflow: hidden;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 
@@ -22,22 +23,42 @@ export const ListItem = styled.li`
 `;
 
 export const MovieLink = styled(Link)`
-    gap: 24px;
-    align-items: center;
-    color: #000000;
-    
+    display: inline-block;
+    height: 100%;
+    color: #000000;    
+`;
+
+export const CardWrap = styled.div`
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+`;
+
+export const PosterWrap = styled.div`
+    width: 100%;
+    height: 100%;
 `;
 
 export const Poster = styled.img`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;   
+`;
+
+export const TitleWrap = styled.div`
+        height: 84px;
+        padding: 16px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 `;
 
 export const Title = styled.h3`
     display: block;
-    padding: 12px;
-    font-size: 16px;
+`;
+
+export const ReleaseDate = styled.p`
+    font-weight: 500;
+    color: #585757;
 `;
