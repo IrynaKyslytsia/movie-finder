@@ -37,11 +37,19 @@ export const Subtitle = styled.h3`
 //MovieDetails styles
 
 export const BackLink = styled(Link)`
-    background-color: #002077;
+    background-color: #6c0303;
     color: #ffffff;
     padding: 8px 24px;
     border-radius: 8px;
     margin-bottom: 40px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        background-color: #450202;
+    }
 `;
 
 export const AdditionalInfo = styled.ul`
@@ -51,8 +59,16 @@ export const AdditionalInfo = styled.ul`
 `;
 
 export const InfoLink = styled(Link)`
-    background-color: #002077;
+    background-color: #6c0303;
     color: #ffffff;
     padding: 8px 24px;
     border-radius: 8px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        background-color: #450202;
+    }
 `;

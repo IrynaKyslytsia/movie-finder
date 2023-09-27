@@ -5,7 +5,7 @@ export const Form = styled.form`
     align-items: center;
     width: 100%;
     max-width: 600px;
-    border: 1px solid #002077; 
+    border: 1px solid #450202; 
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 40px;

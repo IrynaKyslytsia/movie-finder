@@ -8,7 +8,7 @@ export const ReviewList = styled.ul`
 
 export const ListItem = styled.li`
     padding: 10px;
-    background-color: #ebf0fe;  
+    background-color: #dbd6d6;  
 `;
 
 export const AuthorName = styled.p`
