@@ -28,7 +28,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      <BackLink to={backLinkLocationRef.current}>Go back</BackLink>
+      <BackLink to={backLinkLocationRef.current}>GO BACK</BackLink>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {movieInfo && <MovieInfo movie={movieInfo} />}
