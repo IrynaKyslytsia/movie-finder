@@ -6,7 +6,7 @@ const Movies = lazy(() => import('pages/Movies'));
 const MovieDetails = lazy(() => import('pages/MovieDetails'));
 const Reviews = lazy(() => import('components/Rewievs/Reviews'));
 const Cast = lazy(() => import('components/Cast/Cast'));
-const Layout = lazy(() => import('components/Layout/Layout'));
+const Layout = lazy(() => import('components/Layout'));
 
 const App = () => {
   return (
