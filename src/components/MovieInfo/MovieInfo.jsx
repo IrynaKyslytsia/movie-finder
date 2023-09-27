@@ -2,7 +2,7 @@ import { MovieCard, Poster, Info, Title, Text, Subtitle } from "./MovieInfo.styl
 
 const MovieInfo = ({ movie }) => {
     const { genres, title, overview, vote_average, poster_path, release_date } = movie;
-    console.log(genres)
+    // console.log(movie)
 
     return (
         <MovieCard>
