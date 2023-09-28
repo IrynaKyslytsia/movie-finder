@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getMovieCast } from 'services/api';
-import { ActorName, ActorPhoto, CastList, Text, Message } from './Cast.styled';
+import { ActorName, ActorPhoto, CastList, Text, Message, PhotoWrap, Info, ActorWrap } from './Cast.styled';
 import DefaultImage from '../../images/profileImg.jpg';
 
 const { useParams } = require('react-router-dom');
@@ -31,12 +31,18 @@ const Cast = () => {
       {movieCast.length > 0 ? <CastList>
         {movieCast.map(({ name, id, profile_path, character }) => (
           <li key={id}>
-            <ActorPhoto
-              src={profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : DefaultImage}
-              alt={name}
-              width='160' />
-            <ActorName>{name}</ActorName>
-            <Text>Character: {character}</Text>
+            <ActorWrap>
+              <PhotoWrap>
+                <ActorPhoto
+                  src={profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : DefaultImage}
+                  alt={name}
+                  width='160' />
+              </PhotoWrap>
+              <Info>
+                <ActorName>{name}</ActorName>
+                <Text>{character}</Text>
+              </Info>
+            </ActorWrap>
           </li>
       ))}
       </CastList> : (<Message>Sorry, there is no information here...</Message>)}

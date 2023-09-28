@@ -14,24 +14,44 @@ export const CastList = styled.ul`
     margin-right: auto;
 `;
 
+export const ActorWrap = styled.div`
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+`;
+
+export const PhotoWrap = styled.div`
+    width: 100%;
+    height: 100%;
+`;
+
+export const Info = styled.div`
+        height: 136px;
+        margin-top: 6px;
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+`;
+
 export const ActorPhoto = styled.img`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    border-radius: 8px;
 `;
 
 export const ActorName = styled.p`
-    margin-top: 8px;
-    margin-left: 24px;
+    /* margin-top: 8px; */
+    /* margin-left: 24px; */
     font-size: 16px;
     font-weight: 500;
 `;
 
 export const Text = styled.p`
-    margin-top: 8px;
-    margin-left: 24px;
+    color: #FFFFFF80;
 `;
 
 export const Message = styled.div`
