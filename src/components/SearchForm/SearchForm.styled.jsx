@@ -5,7 +5,7 @@ export const Form = styled.form`
     align-items: center;
     width: 100%;
     max-width: 600px;
-    border: 1px solid #450202; 
+    border: 1px solid #FFFFFF; 
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 40px;
@@ -35,9 +35,11 @@ export const Input = styled.input`
     display: inline-block;
     width: 100%;
     font: inherit;
+    color: #FFFFFF;
+    background-color: inherit;
     font-size: 18px;
     border: none;
     outline: none;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
 `;
