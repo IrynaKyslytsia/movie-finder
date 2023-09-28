@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Notiflix from 'notiflix';
-import { ImSearch } from "react-icons/im";
+import { BsSearch } from "react-icons/bs";
 import { Form, Button, Input } from "./SearchForm.styled";
 
 const SearchForm = ({ onSubmit }) => {
@@ -25,7 +25,7 @@ const SearchForm = ({ onSubmit }) => {
         return (            
                 <Form onSubmit={handleSubmit} >
                     <Button type="submit">
-                    <ImSearch width='18' height='18'/>
+                        <BsSearch width='18' height='18'/>
                     </Button>
     
                     <Input

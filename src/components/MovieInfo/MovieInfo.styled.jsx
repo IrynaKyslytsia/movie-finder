@@ -47,9 +47,14 @@ export const Subtitle = styled.h3`
 //MovieDetails styles
 
 export const BackLink = styled(Link)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 36px;
     background-color: #a30101;
     color: #ffffff;
-    padding: 8px 24px;
+    /* padding: 8px 24px; */
     border-radius: 8px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -68,9 +73,13 @@ export const AdditionalInfo = styled.ul`
 `;
 
 export const InfoLink = styled(Link)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #a30101;
     color: #ffffff;
-    padding: 8px 24px;
+    width: 160px;
+    height: 36px;
     border-radius: 8px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);

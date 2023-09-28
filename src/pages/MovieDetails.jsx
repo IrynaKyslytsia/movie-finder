@@ -1,6 +1,7 @@
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 import { AdditionalInfo, BackLink, InfoLink } from 'components/MovieInfo/MovieInfo.styled';
 import { Suspense, useRef, useState, useEffect } from 'react';
+import { FaArrowLeft } from "react-icons/fa";
 
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieInfo } from 'services/api';
@@ -28,7 +29,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      <BackLink to={backLinkLocationRef.current}>GO BACK</BackLink>
+      <BackLink to={backLinkLocationRef.current}><FaArrowLeft width="24" height="24" style={{marginRight: "6px"}} />GO BACK</BackLink>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {movieInfo && <MovieInfo movie={movieInfo} />}
