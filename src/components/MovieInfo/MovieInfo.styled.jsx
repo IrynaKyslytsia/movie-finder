@@ -47,7 +47,7 @@ export const Subtitle = styled.h3`
 //MovieDetails styles
 
 export const BackLink = styled(Link)`
-    background-color: #950202;
+    background-color: #a30101;
     color: #ffffff;
     padding: 8px 24px;
     border-radius: 8px;
@@ -68,7 +68,7 @@ export const AdditionalInfo = styled.ul`
 `;
 
 export const InfoLink = styled(Link)`
-    background-color: #950202;
+    background-color: #a30101;
     color: #ffffff;
     padding: 8px 24px;
     border-radius: 8px;

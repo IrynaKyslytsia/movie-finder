@@ -68,7 +68,7 @@ export const Rating = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    border: red 3px solid;
+    border: #a30101 3px solid;
     border-radius: 50%;
     font-size: 12px;
     font-weight: 700;

@@ -18,7 +18,7 @@ const MovieInfo = ({ movie }) => {
                     {genres.map(({ name }) => name).join(", ")}
                 </Text>
                 <Text>{runtime} m</Text>
-                <Text><b>User Score: {(vote_average * 10).toFixed(0)} %</b></Text>
+                <Text>User Score: <b style={{color: "#a30101", fontSize: "26px"}}>{(vote_average * 10).toFixed(0)} %</b></Text>
                 <div>
                     <Subtitle>Overview</Subtitle>
                     <Text>{overview}</Text>
