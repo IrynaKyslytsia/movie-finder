@@ -7,14 +7,17 @@ export const ReviewList = styled.ul`
 `;
 
 export const ListItem = styled.li`
-    padding: 10px;
-    background-color: #dbd6d6;  
+    padding: 16px;
+    color: #FFFFFF;
+    background-color: #787777;
+    border-radius: 8px;
 `;
 
 export const AuthorName = styled.p`
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 8px;
+    color: #a30101;
 `;
 
 export const Content = styled.p`
