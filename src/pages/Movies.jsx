@@ -1,28 +1,27 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Notiflix from 'notiflix';
-import { getAllMovies, getMovies } from "services/api";
+import { getMovies } from "services/api";
 import SearchForm from 'components/SearchForm/SearchForm';
 import MovieList from "components/MovieList/MovieList";
-import { LoadMoreBtn } from "components/MovieList/MovieList.styled";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
 
-  useEffect(() => {
-    setIsLoading(true);
+  // useEffect(() => {
+  //   setIsLoading(true);
 
-    getAllMovies(page)
-      .then(data => { setMovies(prevState => ([...prevState, ...data.results])) })
-      .catch(error => setError(error))
-      .finally(() => { setIsLoading(false) })
-  }, [page]);
+  //   getAllMovies(page)
+  //     .then(data => { setMovies(prevState => ([...prevState, ...data.results])) })
+  //     .catch(error => setError(error))
+  //     .finally(() => { setIsLoading(false) })
+  // }, [page]);
 
   useEffect(() => {
     if (query === '') {
@@ -47,9 +46,9 @@ const Movies = () => {
     setSearchParams({query: searchQuery})
   };
 
-  const onLoadMore = () => {
-        setPage(page + 1)
-    };
+  // const onLoadMore = () => {
+  //       setPage(page + 1)
+  //   };
 
   return (
     <>
@@ -58,7 +57,6 @@ const Movies = () => {
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {movies && <MovieList movies={movies} />}
-      {(movies.length > 0 && !isLoading) && <LoadMoreBtn onClick={onLoadMore}>LOAD MORE</LoadMoreBtn>}
     </>
   );
 };
