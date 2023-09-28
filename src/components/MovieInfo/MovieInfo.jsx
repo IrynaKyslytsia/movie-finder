@@ -14,7 +14,7 @@ const MovieInfo = ({ movie }) => {
             </PosterWrap>
             <Info>
                 <Title>{`${title} (${release_date.slice(0, 4)})`}</Title>
-                <Text>
+                <Text style={{color: "#FFFFFF80"}}>
                     {genres.map(({ name }) => name).join(", ")}
                 </Text>
                 <Text>{runtime} m</Text>
