@@ -2,17 +2,19 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const MovieCard = styled.div`
---min: 30ch;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
-gap: 2rem;
+    --min: 30ch;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+    gap: 2rem;
     margin-top: 40px;
     margin-bottom: 40px;
+    padding: 40px;
+    color: #FFFFFF;
 `;
 
 export const PosterWrap = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100%;    
 `;
 
 export const Poster = styled.img`
@@ -20,6 +22,7 @@ export const Poster = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;  
+    border-radius: 8px;
 `;
 
 export const Info = styled.div`
@@ -29,7 +32,7 @@ export const Info = styled.div`
 `;
 
 export const Title = styled.h2`
-    font-size: 36px;
+    font-size: 40px;
 `;
 
 export const Text = styled.p`
@@ -38,12 +41,13 @@ export const Text = styled.p`
 
 export const Subtitle = styled.h3`
     font-size: 24px;
+    margin-bottom: 12px;
 `;
 
 //MovieDetails styles
 
 export const BackLink = styled(Link)`
-    background-color: #6c0303;
+    background-color: #950202;
     color: #ffffff;
     padding: 8px 24px;
     border-radius: 8px;
@@ -53,7 +57,7 @@ export const BackLink = styled(Link)`
         transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-        background-color: #450202;
+        background-color: #530202;
     }
 `;
 
@@ -64,7 +68,7 @@ export const AdditionalInfo = styled.ul`
 `;
 
 export const InfoLink = styled(Link)`
-    background-color: #6c0303;
+    background-color: #950202;
     color: #ffffff;
     padding: 8px 24px;
     border-radius: 8px;
@@ -74,6 +78,6 @@ export const InfoLink = styled(Link)`
         transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-        background-color: #450202;
+        background-color: #530202;
     }
 `;

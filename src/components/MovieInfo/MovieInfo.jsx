@@ -2,7 +2,7 @@ import { MovieCard, Poster, Info, Title, Text, Subtitle, PosterWrap } from "./Mo
 import DefaultImage from '../../images/movieImg.jpg';
 
 const MovieInfo = ({ movie }) => {
-    const { genres, title, overview, vote_average, poster_path, release_date } = movie;
+    const { genres, title, overview, runtime, vote_average, poster_path, release_date } = movie;
     console.log(movie)
 
     return (
@@ -17,9 +17,12 @@ const MovieInfo = ({ movie }) => {
                 <Text>
                     {genres.map(({ name }) => name).join(", ")}
                 </Text>
+                <Text>{runtime} m</Text>
                 <Text><b>User Score: {(vote_average * 10).toFixed(0)} %</b></Text>
-                <Subtitle>Overview</Subtitle>
-                <Text>{overview}</Text>
+                <div>
+                    <Subtitle>Overview</Subtitle>
+                    <Text>{overview}</Text>
+                </div>
             </Info>
         </MovieCard>
     )

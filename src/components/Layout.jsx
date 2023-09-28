@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <>
       <AppBar />
-      <main>
+      <main style={{backgroundColor: "#21222C"}}>
         <Container>
             <Suspense fallback={<div>Loading...</div>}>
                 <Outlet />

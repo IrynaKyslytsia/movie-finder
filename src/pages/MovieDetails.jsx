@@ -34,10 +34,10 @@ const MovieDetails = () => {
       {movieInfo && <MovieInfo movie={movieInfo} />}
       <AdditionalInfo>
         <li>
-          <InfoLink to="cast">Cast</InfoLink>
+          <InfoLink to="cast">CAST</InfoLink>
         </li>
         <li>
-          <InfoLink to="reviews">Reviews</InfoLink>
+          <InfoLink to="reviews">REVIEWS</InfoLink>
         </li>
       </AdditionalInfo>
       <Suspense fallback={<div>Loading...</div>}>
