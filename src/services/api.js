@@ -1,23 +1,10 @@
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '1b503a470f760c92c3c57decdfe60ef0';
 
-// список всіх фільмів
-
-export const getAllMovies = (page = 1) => {
-    return fetch(`${BASE_URL}discover/movie?api_key=${API_KEY}&page=${page}`)
-            .then(response => {
-                if (response.ok) {
-                    return response.json()
-                }
-
-                return Promise.reject(new Error('Oops... Something went wrong'))
-            })
-};
-
 //список найпопулярніших фільмів на сьогодні
 
-export const getTrendingMovies = () => {
-    return fetch(`${BASE_URL}trending/movie/day?api_key=${API_KEY}`)
+export const getTrendingMovies = (page = 1) => {
+    return fetch(`${BASE_URL}trending/movie/day?api_key=${API_KEY}&page=${page}`)
             .then(response => {
                 if (response.ok) {
                     return response.json()

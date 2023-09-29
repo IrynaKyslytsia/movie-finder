@@ -7,7 +7,6 @@ const MovieCard = ({ movie }) => {
     const location = useLocation();
     
     const { id, title, poster_path, release_date, vote_average } = movie;
-    // console.log(movie)
 
     return (
         <ListItem key={id}>

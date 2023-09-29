@@ -7,21 +7,12 @@ import MovieList from "components/MovieList/MovieList";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  // const [page, setPage] = useState(1);
+  
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
-
-  // useEffect(() => {
-  //   setIsLoading(true);
-
-  //   getAllMovies(page)
-  //     .then(data => { setMovies(prevState => ([...prevState, ...data.results])) })
-  //     .catch(error => setError(error))
-  //     .finally(() => { setIsLoading(false) })
-  // }, [page]);
 
   useEffect(() => {
     if (query === '') {
@@ -45,10 +36,6 @@ const Movies = () => {
   const handleFormSubmit = (searchQuery) => {
     setSearchParams({query: searchQuery})
   };
-
-  // const onLoadMore = () => {
-  //       setPage(page + 1)
-  //   };
 
   return (
     <>
