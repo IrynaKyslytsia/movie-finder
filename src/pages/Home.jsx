@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 import { getTrendingMovies } from "services/api";
 import MovieList from "components/MovieList/MovieList";
+import Loader from "components/Loader/Loader";
 
 const Button = styled.button`
     display: flex;
@@ -51,7 +52,7 @@ const Home = () => {
       <Helmet>
           <title>Movie Finder</title>
       </Helmet>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <Loader />}
       {error && <div>{error.message}</div>}
       {trendingMovies && <MovieList movies={trendingMovies} />}
       {(trendingMovies && !isLoading) && <Button onClick={onLoadMore}>LOAD MORE</Button>}

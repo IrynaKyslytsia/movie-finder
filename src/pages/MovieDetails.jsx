@@ -5,6 +5,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 import { AdditionalInfo, StyledLink } from 'components/MovieInfo/MovieInfo.styled';
 import { getMovieInfo } from 'services/api';
+import Loader from 'components/Loader/Loader';
 
 const MovieDetails = () => {
   const [movieInfo, setMovieInfo] = useState(null);
@@ -33,7 +34,7 @@ const MovieDetails = () => {
           <title>Movie Details</title>
       </Helmet>
       <StyledLink to={backLinkLocationRef.current}><FaArrowLeft width="24" height="24" style={{marginRight: "6px"}} />GO BACK</StyledLink>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <Loader />}
       {error && <div>{error.message}</div>}
       {movieInfo && <MovieInfo movie={movieInfo} />}
       <AdditionalInfo>
@@ -44,7 +45,7 @@ const MovieDetails = () => {
           <StyledLink to="reviews">REVIEWS</StyledLink>
         </li>
       </AdditionalInfo>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </>

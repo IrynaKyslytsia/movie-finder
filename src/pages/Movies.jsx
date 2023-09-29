@@ -5,6 +5,7 @@ import Notiflix from 'notiflix';
 import { getMovies } from "services/api";
 import SearchForm from 'components/SearchForm/SearchForm';
 import MovieList from "components/MovieList/MovieList";
+import Loader from "components/Loader/Loader";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -45,7 +46,7 @@ const Movies = () => {
       </Helmet>
       <SearchForm
         onSubmit={handleFormSubmit} />
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <Loader />}
       {error && <div>{error.message}</div>}
       {movies && <MovieList movies={movies} />}
     </>
