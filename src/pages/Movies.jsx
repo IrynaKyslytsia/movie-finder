@@ -4,6 +4,7 @@ import Notiflix from 'notiflix';
 import { getMovies } from "services/api";
 import SearchForm from 'components/SearchForm/SearchForm';
 import MovieList from "components/MovieList/MovieList";
+import { Helmet } from "react-helmet";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -39,6 +40,9 @@ const Movies = () => {
 
   return (
     <>
+      <Helmet>
+          <title>Movies</title>
+      </Helmet>
       <SearchForm
         onSubmit={handleFormSubmit} />
       {isLoading && <div>Loading...</div>}

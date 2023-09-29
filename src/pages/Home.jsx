@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import MovieList from "components/MovieList/MovieList";
 import { getTrendingMovies } from "services/api";
 import styled from "@emotion/styled";
+import { Helmet } from "react-helmet";
 
 const Button = styled.button`
     display: flex;
@@ -47,6 +48,9 @@ const Home = () => {
   
   return (
     <>
+      <Helmet>
+          <title>Movie Finder</title>
+      </Helmet>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {trendingMovies && <MovieList movies={trendingMovies} />}
