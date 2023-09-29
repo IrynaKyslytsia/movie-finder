@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import MovieList from "components/MovieList/MovieList";
-import { getTrendingMovies } from "services/api";
-import styled from "@emotion/styled";
 import { Helmet } from "react-helmet";
+import styled from "@emotion/styled";
+import { getTrendingMovies } from "services/api";
+import MovieList from "components/MovieList/MovieList";
 
 const Button = styled.button`
     display: flex;

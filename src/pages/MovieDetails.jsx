@@ -1,10 +1,9 @@
-import MovieInfo from 'components/MovieInfo/MovieInfo';
-import { AdditionalInfo, BackLink, InfoLink } from 'components/MovieInfo/MovieInfo.styled';
 import { Suspense, useRef, useState, useEffect } from 'react';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { FaArrowLeft } from "react-icons/fa";
-
-import { Outlet, useLocation, useParams } from 'react-router-dom';
+import MovieInfo from 'components/MovieInfo/MovieInfo';
+import { AdditionalInfo, StyledLink } from 'components/MovieInfo/MovieInfo.styled';
 import { getMovieInfo } from 'services/api';
 
 const MovieDetails = () => {
@@ -33,16 +32,16 @@ const MovieDetails = () => {
       <Helmet>
           <title>Movie Details</title>
       </Helmet>
-      <BackLink to={backLinkLocationRef.current}><FaArrowLeft width="24" height="24" style={{marginRight: "6px"}} />GO BACK</BackLink>
+      <StyledLink to={backLinkLocationRef.current}><FaArrowLeft width="24" height="24" style={{marginRight: "6px"}} />GO BACK</StyledLink>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {movieInfo && <MovieInfo movie={movieInfo} />}
       <AdditionalInfo>
         <li>
-          <InfoLink to="cast">CAST</InfoLink>
+          <StyledLink to="cast">CAST</StyledLink>
         </li>
         <li>
-          <InfoLink to="reviews">REVIEWS</InfoLink>
+          <StyledLink to="reviews">REVIEWS</StyledLink>
         </li>
       </AdditionalInfo>
       <Suspense fallback={<div>Loading...</div>}>

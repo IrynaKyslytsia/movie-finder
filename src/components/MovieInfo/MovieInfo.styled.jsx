@@ -46,7 +46,7 @@ export const Subtitle = styled.h3`
 
 //MovieDetails styles
 
-export const BackLink = styled(Link)`
+export const StyledLink = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +54,6 @@ export const BackLink = styled(Link)`
     height: 36px;
     background-color: #a30101;
     color: #ffffff;
-    /* padding: 8px 24px; */
     border-radius: 8px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -70,23 +69,4 @@ export const AdditionalInfo = styled.ul`
     display: flex;
     gap: 40px;
     margin-bottom: 40px;
-`;
-
-export const InfoLink = styled(Link)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #a30101;
-    color: #ffffff;
-    width: 160px;
-    height: 36px;
-    border-radius: 8px;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    &:hover {
-        background-color: #530202;
-    }
 `;

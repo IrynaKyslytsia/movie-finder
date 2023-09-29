@@ -26,6 +26,7 @@ export const Content = styled.p`
 `;
 
 export const Message = styled.div`
+color: #FFFFFF;
     font-size: 24px;
     font-weight: 500;
 `;

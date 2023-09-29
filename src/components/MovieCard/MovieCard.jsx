@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
-import DefaultImage from '../../images/movieImg.jpg';
 import { CardWrap, ListItem, MovieLink, Poster, PosterWrap, Info, Title, TitleWrap, Rating } from './MovieCard.styled';
+import DefaultImage from '../../images/movieImg.jpg';
 
 const MovieCard = ({ movie }) => {
 

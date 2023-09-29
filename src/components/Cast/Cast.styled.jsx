@@ -44,8 +44,6 @@ export const ActorPhoto = styled.img`
 `;
 
 export const ActorName = styled.p`
-    /* margin-top: 8px; */
-    /* margin-left: 24px; */
     font-size: 16px;
     font-weight: 500;
 `;
@@ -55,6 +53,7 @@ export const Text = styled.p`
 `;
 
 export const Message = styled.div`
+    color: #FFFFFF;
     font-size: 24px;
     font-weight: 500;
 `;
