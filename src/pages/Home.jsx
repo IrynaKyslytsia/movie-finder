@@ -1,6 +1,29 @@
 import { useState, useEffect } from "react";
 import MovieList from "components/MovieList/MovieList";
 import { getTrendingMovies } from "services/api";
+import styled from "@emotion/styled";
+
+const Button = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    height: 36px;
+    background-color: #a30101;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        background-color: #530202;
+    }
+`;
 
 const Home = () => {
   
@@ -27,7 +50,7 @@ const Home = () => {
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {trendingMovies && <MovieList movies={trendingMovies} />}
-      {(trendingMovies && !isLoading) && <button onClick={onLoadMore}>Load more</button>}
+      {(trendingMovies && !isLoading) && <Button onClick={onLoadMore}>LOAD MORE</Button>}
     </>
   ) 
 };

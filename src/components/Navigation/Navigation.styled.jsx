@@ -11,15 +11,14 @@ export const Nav = styled.nav`
 
 export const Link = styled(NavLink)`
     padding: 16px 32px;
-    border-radius: 12px;
-    color: white;
+    color: #FFFFFF;
     font-size: 18px;
     line-height: 1.43;
     font-weight: 600;
     text-transform: uppercase;
 
   &.active {
-    color: white;
+    color: #FFFFFF;
     text-decoration: underline;
   }
 `;
