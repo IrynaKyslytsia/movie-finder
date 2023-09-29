@@ -3,7 +3,12 @@ import DefaultImage from '../../images/movieImg.jpg';
 
 const MovieInfo = ({ movie }) => {
     const { genres, title, overview, runtime, vote_average, poster_path, release_date } = movie;
-    console.log(movie)
+    
+    function getTimeFromMins(mins) {
+        let hours = Math.trunc(mins/60);
+        let minutes = mins % 60;
+        return hours + 'h. ' + minutes + 'm.';
+    };
 
     return (
         <MovieCard>
@@ -17,7 +22,7 @@ const MovieInfo = ({ movie }) => {
                 <Text style={{color: "#FFFFFF80"}}>
                     {genres.map(({ name }) => name).join(", ")}
                 </Text>
-                <Text>{runtime} m</Text>
+                <Text>{getTimeFromMins(runtime)}</Text>
                 <Text>User Score: <b style={{color: "#a30101", fontSize: "26px"}}>{(vote_average * 10).toFixed(0)} %</b></Text>
                 <div>
                     <Subtitle>Overview</Subtitle>
