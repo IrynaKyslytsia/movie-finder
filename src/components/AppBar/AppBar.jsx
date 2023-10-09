@@ -1,9 +1,13 @@
 import Navigation from "../Navigation/Navigation";
-import { Header } from "./AppBar.styled";
+import { FirstSpan, Header, Logo, SecondSpan } from "./AppBar.styled";
 
 const AppBar = () => {
     return (
         <Header>
+            <Logo>
+                <FirstSpan>Movie</FirstSpan>
+                <SecondSpan>Finder</SecondSpan>
+            </Logo>
             <Navigation />
         </Header>     
     )
