@@ -18,7 +18,8 @@ const App = () => {
           <Route path="reviews" element={<Reviews />} />
           <Route path="cast" element={<Cast />} />
         </Route>
-      </Route>      
+        <Route path="*" element={<Home />} />
+      </Route>
     </Routes>
   );
 };
